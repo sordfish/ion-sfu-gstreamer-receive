@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	gst "gstreamer-sink"
+	gst "github.com/sordfish/gstreamer-sink"
 
 	ilog "github.com/pion/ion-log"
 	sdk "github.com/pion/ion-sdk-go"
