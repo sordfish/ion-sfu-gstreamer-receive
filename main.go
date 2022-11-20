@@ -25,7 +25,7 @@ func init() {
 	runtime.LockOSThread()
 }
 
-func runClientLoop(addr, session string) {
+func runClientLoop(addr, session, videoSink, audioSink string) {
 
 	// new sdk engine
 	connector := sdk.NewConnector(addr)
@@ -54,9 +54,9 @@ func runClientLoop(addr, session string) {
 		sink := "fakesink"
 		switch track.Kind() {
 		case webrtc.RTPCodecTypeAudio:
-			sink = "autoaudiosink"
+			sink = audioSink
 		case webrtc.RTPCodecTypeVideo:
-			sink = "udpsink host=127.0.0.1 port=12345"
+			sink = videoSink
 		}
 		pipeline := gst.CreatePipeline(strings.ToLower(codecName), sink)
 		pipeline.Start()
@@ -86,11 +86,13 @@ func runClientLoop(addr, session string) {
 
 func main() {
 	// parse flag
-	var session, addr string
+	var session, addr, gst_vid, gst_snd string
 	flag.StringVar(&addr, "addr", "localhost:5551", "ion-sfu grpc addr")
 	flag.StringVar(&session, "session", "ion", "join session name")
+	flag.StringVar(&gst_vid, "gstvid", "udpsink host=127.0.0.1 port=12345", "gstreamer video")
+	flag.StringVar(&gst_snd, "gstsnd", "udpsink host=127.0.0.1 port=54321", "gstreamer sound")
 	flag.Parse()
 
-	go runClientLoop(addr, session)
+	go runClientLoop(addr, session, gst_vid, gst_snd)
 	gst.StartMainLoop()
 }
