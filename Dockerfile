@@ -1,4 +1,4 @@
-FROM sordfish/build-tools:1.19 as build
+FROM sordfish/build-tools:1.19.3 as build
 
 WORKDIR /app
 COPY ./* /app/

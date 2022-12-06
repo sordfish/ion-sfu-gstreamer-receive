@@ -33,4 +33,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: sordfish/ion-sfu-gstreamer-receive:latest,sordfish/ion-sfu-gstreamer-receive:0.1.1
+          tags: sordfish/ion-sfu-gstreamer-receive:latest,sordfish/ion-sfu-gstreamer-receive:0.1.2
