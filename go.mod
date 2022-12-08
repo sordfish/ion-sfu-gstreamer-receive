@@ -1,4 +1,4 @@
-module ion-sfu-streamer-receive
+module ion-sfu-gstreamer-receive
 
 go 1.19
 

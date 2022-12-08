@@ -6,5 +6,7 @@ RUN go build -o ion-sfu-gstreamer-receive
 
 FROM sordfish/ubuntu-gstreamer:latest as runtime
 
-COPY --from=build /app/ion-sfu-gstreamer-receive /
-CMD ["./ion-sfu-gstreamer-receive"]
+WORKDIR /app
+COPY --from=build /app/ion-sfu-gstreamer-receive /app/
+
+CMD ["/app/ion-sfu-gstreamer-receive"]
