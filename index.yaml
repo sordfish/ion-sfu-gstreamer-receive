@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   ion-sfu-gstreamer-receive:
   - apiVersion: v2
+    appVersion: 0.1.3
+    created: "2022-12-08T21:12:43.488624951Z"
+    description: A Helm chart for Kubernetes
+    digest: 336ab08a343620e94bca4d475cdda8a0eec90ee7e5273713e38a4e8528dbbb0e
+    name: ion-sfu-gstreamer-receive
+    type: application
+    urls:
+    - https://github.com/sordfish/ion-sfu-gstreamer-receive/releases/download/ion-sfu-gstreamer-receive-0.1.3/ion-sfu-gstreamer-receive-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
     appVersion: 0.1.2
     created: "2022-12-07T17:42:13.034921289Z"
     description: A Helm chart for Kubernetes
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/sordfish/ion-sfu-gstreamer-receive/releases/download/ion-sfu-gstreamer-receive-0.1.1/ion-sfu-gstreamer-receive-0.1.1.tgz
     version: 0.1.1
-generated: "2022-12-07T17:42:13.034931989Z"
+generated: "2022-12-08T21:12:43.488638049Z"
