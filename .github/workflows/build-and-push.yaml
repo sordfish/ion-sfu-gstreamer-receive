@@ -1,10 +1,11 @@
 
-name: build container image (ion-sfu-gstreamer-receive, ubuntu 20.04 and gstreamer) and push
+name: build container image (ion-sfu-gstreamer-receive, ubuntu 22.04 and gstreamer) and push
 
 on:
   push:
     paths:
       - 'Dockerfile'
+      - '.github/build-and-push.yaml'
 
 jobs:
   docker-gstreamer:
@@ -33,4 +34,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: sordfish/ion-sfu-gstreamer-receive:latest,sordfish/ion-sfu-gstreamer-receive:0.1.2
+          tags: sordfish/ion-sfu-gstreamer-receive:latest,sordfish/ion-sfu-gstreamer-receive:0.1.3
